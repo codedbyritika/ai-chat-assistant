@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import { v1 as uuidv1 } from "uuid";
 const API_URL = import.meta.env.VITE_API_URL;
+import logo from "../assets/logo.png";
 
 function SideBar() {
   const { allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats } = useContext(MyContext);
@@ -89,7 +90,7 @@ function SideBar() {
     <section className="sidebar">
       {/* {new chat button} */}
       <button onClick={createNewChat}>
-        <img src="src/assets/logo.png" alt="logo" className="logo" />
+       <img src={logo} alt="logo" className="logo" />
         <span> <i className="fa-regular fa-pen-to-square"></i></span>
       </button>
       {/* {history} */}
