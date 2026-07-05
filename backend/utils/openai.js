@@ -26,13 +26,26 @@ const getOpenAiApiResponse=async(message)=>{
             options
         );
 
+      
         const data = await response.json();
-        return data.choices[0].message.content;//our reply 
+
+console.log("Gemini Response:", data);
+
+if (!response.ok) {
+    throw new Error(data.error?.message || "Gemini API Error");
+}
+
+if (!data.choices || !data.choices.length) {
+    throw new Error("No response received from Gemini.");
+}
+
+return data.choices[0].message.content; 
 
         // res.json(data);
 
     } catch (err) {
-        console.log(err);
+        console.error("Gemini Error:", err);
+    throw err;
       
     }
 }
