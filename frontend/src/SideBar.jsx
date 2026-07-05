@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { MyContext } from "./MyContext.jsx";
 import { v1 as uuidv1 } from "uuid";
 const API_URL = import.meta.env.VITE_API_URL;
-import logo from "../assets/logo.png";
+import logo from "./assets/logo.png";
 
 function SideBar() {
   const { allThreads, setAllThreads, currThreadId, setNewChat, setPrompt, setReply, setCurrThreadId, setPrevChats } = useContext(MyContext);
